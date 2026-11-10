@@ -15,5 +15,5 @@ virtual ~Persona();
   void setNombre(string nombre);
   string getId();
   string getNombre();
-  virtual string describir() const = 0;
+  virtual string describir() = 0;
 };
