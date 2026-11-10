@@ -1,27 +1,28 @@
 #pragma once
 #include <string>
+#include "Propietario.h"
 using namespace std;
 
-class Persona; 
 
 class Vehiculo
 {
 private:
     string placa;
-    Persona* propietario;
+    Propietario* propietario;
 
 public:
     
     Vehiculo();
     virtual ~Vehiculo();
-    Vehiculo(string placa, Persona* propietario);
+    Vehiculo(string placa, Propietario* propietario);
 
     void setPlaca(string placa);
-    void setPropietario(Persona* propietario);
+    void setPropietario(Propietario* propietario);
 
     string getPlaca();
-    Persona* getPropietario();
+    Propietario* getPropietario();
 
     virtual int calcularPrecio() = 0;
     virtual void mostrarinfo() = 0;
+    
 };

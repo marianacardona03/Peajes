@@ -10,7 +10,7 @@ Vehiculo::Vehiculo()
   this->propietario = nullptr;
 }
 
-Vehiculo::Vehiculo(string placa, Persona* propietario)
+Vehiculo::Vehiculo(string placa, Propietario* propietario)
 {
   this->placa = placa;
   this->propietario = propietario;
@@ -18,9 +18,9 @@ Vehiculo::Vehiculo(string placa, Persona* propietario)
 }
 
 void Vehiculo::setPlaca(string placa) { this->placa = placa; }
-void Vehiculo::setPropietario(Persona* propietario) {this->propietario = propietario; }
+void Vehiculo::setPropietario(Propietario* propietario) {this->propietario = propietario; }
 string Vehiculo::getPlaca() { return this->placa; }
-Persona* Vehiculo::getPropietario() { return this->propietario = propietario; }
+Propietario* Vehiculo::getPropietario() { return this->propietario = propietario; }
 
 
 
