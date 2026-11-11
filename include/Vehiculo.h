@@ -2,27 +2,29 @@
 #include <string>
 #include "Propietario.h"
 using namespace std;
+#include <iostream>
 
 
 class Vehiculo
 {
 private:
-    string placa;
-    Propietario* propietario;
+	string placa;
+	Propietario* propietario;
 
 public:
-    
-    Vehiculo();
-    virtual ~Vehiculo();
-    Vehiculo(string placa, Propietario* propietario);
 
-    void setPlaca(string placa);
-    void setPropietario(Propietario* propietario);
+	Vehiculo();
+	virtual ~Vehiculo();
+	Vehiculo(string placa, Propietario* propietario);
 
-    string getPlaca();
-    Propietario* getPropietario();
+	void setPlaca(string placa);
+	void setPropietario(Propietario* propietario);
 
-    virtual int calcularPrecio() = 0;
-    virtual void mostrarinfo() = 0;
-    
+	string getPlaca() const;
+	Propietario* getPropietario() const;
+	virtual string getTipo() const = 0;
+	virtual string getInfo() const = 0;
+	virtual int calcularPrecio() const = 0;
 };
+
+ostream& operator<<(ostream& os, const Vehiculo& v);

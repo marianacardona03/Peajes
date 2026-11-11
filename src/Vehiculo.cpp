@@ -19,8 +19,18 @@ Vehiculo::Vehiculo(string placa, Propietario* propietario)
 
 void Vehiculo::setPlaca(string placa) { this->placa = placa; }
 void Vehiculo::setPropietario(Propietario* propietario) {this->propietario = propietario; }
-string Vehiculo::getPlaca() { return this->placa; }
-Propietario* Vehiculo::getPropietario() { return this->propietario = propietario; }
+string Vehiculo::getPlaca() const  { return this->placa; }
+Propietario* Vehiculo::getPropietario() const { return this->propietario;}
+
+ostream& operator<<(ostream& os, const Vehiculo& v)
+{
+    os << v.getTipo() << " " << v.getPlaca() << " - " << v.getInfo();
+    return os;
+}
+
+
+
+
 
 
 
