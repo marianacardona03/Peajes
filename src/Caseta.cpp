@@ -60,7 +60,7 @@ int Caseta::getCantidadBuses() {
 int Caseta::getCantidadCamiones() {
     int contador = 0;
     for (int i = 0; i < pasos.size(); i++) {
-        if (pasos[i]->getTipo() == "Camion") {
+        if (pasos[i]->getTipo() == "Camión") {
             contador++;
         }
     }
