@@ -40,9 +40,9 @@ int main() {
     cout << "Paga: " << moto2->calcularPrecio() << endl;
     cout << "¿Es de alto cilindraje? ";
     if (moto2->altoCilindraje() == true) {
-        cout << "Si" << endl;
+        cout << "Si" << endl << endl;
     } else {
-        cout << "No" << endl;
+        cout << "No" << endl ;
     }
     
         cout << "Caso 5" << endl;
@@ -73,23 +73,45 @@ int main() {
     }
     
 
-    cout << "Caso 9: ";
+    cout << "Caso 9: "; 
     try {
         Camion* camionInvalido = new Camion("CAM001", nullptr, 1);
         delete camionInvalido;
     }
     catch (const DatosInvalidos& e) {
-        cout << "Error, " << e.what() << endl;
+        cout << "Error, " << e.what() << endl<< endl;
     }
     
     
     
+    cout << "Caso 10" << endl;
+    Operador operador("4380", "Roberto Navia", "AC-456");
+    cout << operador.describir() << endl;
  
-    
-    
-    
-    
-    
+    Caseta* caseta = new Caseta("Caseta Norte", &operador);
+    caseta->registrarPaso(carro);   
+    caseta->registrarPaso(moto1);  
+    caseta->registrarPaso(bus);     
+    caseta->registrarPaso(camion);  
  
+    cout << "Caseta: " << caseta->getNombre() << endl;
+    cout << "Total de pasos: " << caseta->getTotalPasos() << endl;
+    cout << "Recaudo total: $" << caseta->getTotalRecaudado() << endl;
+    cout << "Carros: " << caseta->getCantidadCarros() << endl;
+    cout << "Motos: " << caseta->getCantidadMotos() << endl;
+    cout << "Buses:  " << caseta->getCantidadBuses() << endl;
+    cout << "Camiones: " << caseta->getCantidadCamiones() << endl;
+    cout << endl;
+    
+    cout << "Caso 13" << endl;
+    
+    delete caseta;
+ 
+    Vehiculo* vehiculos[4] = { carro, moto1, bus, camion };
+    for (int i = 0; i < 4; i++) {
+        delete vehiculos[i];   
+    }
+    
     return 0;
 }
+
