@@ -52,6 +52,17 @@ int main() {
     cout << "Paga: " << bus->calcularPrecio() << endl << endl;
     
     
+    cout << "Caso 6" << endl;
+    Camion* camion = new Camion("CAM301", nullptr, 3);
+    cout << *camion << endl;
+    cout << "Paga: " << camion->calcularPrecio() << endl << endl;
+ 
+    
+    cout << "Caso 7" << endl;
+    camion->agregarEje();
+    cout << *camion << endl;
+    cout << "Paga: $" << camion->calcularPrecio() << endl << endl;
+    
     
     
  
