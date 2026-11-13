@@ -45,8 +45,7 @@ int main() {
         cout << "No" << endl;
     }
     
-    
-    cout << "Caso 5" << endl;
+        cout << "Caso 5" << endl;
     Vehiculo* bus = new Bus("BUS777", &vecino, 38);
     cout << *bus << endl;
     cout << "Paga: " << bus->calcularPrecio() << endl << endl;
@@ -61,7 +60,33 @@ int main() {
     cout << "Caso 7" << endl;
     camion->agregarEje();
     cout << *camion << endl;
-    cout << "Paga: $" << camion->calcularPrecio() << endl << endl;
+    cout << "Paga: " << camion->calcularPrecio() << endl << endl;
+    
+    
+    cout << "Caso 8: ";
+    try {
+        Auto* autoInvalido = new Auto("", &noVecino, 2);
+        delete autoInvalido;
+    }
+    catch (const PlacaInvalida& e) {
+        cout << "Error, " << e.what() << endl;
+    }
+    
+
+    cout << "Caso 9: ";
+    try {
+        Camion* camionInvalido = new Camion("CAM001", nullptr, 1);
+        delete camionInvalido;
+    }
+    catch (const DatosInvalidos& e) {
+        cout << "Error, " << e.what() << endl;
+    }
+    
+    
+    
+ 
+    
+    
     
     
     
