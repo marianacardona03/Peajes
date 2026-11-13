@@ -46,6 +46,12 @@ int main() {
     }
     
     
+    cout << "Caso 5" << endl;
+    Vehiculo* bus = new Bus("BUS777", &vecino, 38);
+    cout << *bus << endl;
+    cout << "Paga: " << bus->calcularPrecio() << endl << endl;
+    
+    
     
     
  
