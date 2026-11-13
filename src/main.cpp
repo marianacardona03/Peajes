@@ -32,6 +32,22 @@ int main() {
     Vehiculo* moto1 = new Moto("XYZ45A", &vecino, 125);
     cout << *moto1 << endl;
     cout << "Paga: " << moto1->calcularPrecio() << endl << endl;
+    
+    
+    cout << "Caso 4" << endl;
+    Moto* moto2 = new Moto("MOT650", nullptr, 650);
+    cout << *moto2 << endl;
+    cout << "Paga: " << moto2->calcularPrecio() << endl;
+    cout << "¿Es de alto cilindraje? ";
+    if (moto2->altoCilindraje() == true) {
+        cout << "Si" << endl;
+    } else {
+        cout << "No" << endl;
+    }
+    
+    
+    
+    
  
     return 0;
 }
