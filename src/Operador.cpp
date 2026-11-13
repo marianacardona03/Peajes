@@ -3,19 +3,15 @@
 using namespace std;
 
 
-Operador::Operador()
-{
-  this->codigo = "";
-}
-
 Operador::Operador(const string& id, const string& nombre, string codigo): Persona(id,nombre)
 {
   this->codigo = codigo;
 }
 void Operador::setCodigo(string codigo) { this->codigo = codigo; }
-string Operador::getCodigo() { return this->codigo; }
+string Operador::getCodigo() const { return this->codigo; }
 
-string Operador::describir()
+string Operador::describir () const
 {
-    return "Operador: " + getNombre() + " ID: " + getId() + ")" + "Código:" + getCodigo();
+    return "Operador: " + getNombre() + " ID: " + getId() +  "  Código:" + getCodigo();
 }
+

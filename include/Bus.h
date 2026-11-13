@@ -8,7 +8,6 @@ private:
     int puestos;
 
 public:
-  Bus();
   ~Bus() override;
   Bus (string placa,Propietario* propietario, int puestos);
   void setPuestos(int puestos);

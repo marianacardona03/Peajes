@@ -1,10 +1,6 @@
 #include <iostream>
 #include <Bus.h>
-
-Bus::Bus() : Vehiculo()
-{
-	this->puestos = 1;
-}
+#include "Excepciones.h"
 
 Bus::~Bus()
 {
@@ -14,11 +10,17 @@ Bus::~Bus()
 Bus::Bus(string placa, Propietario* propietario, int puestos )
 	: Vehiculo(placa,propietario)
 {
+    if (puestos < 1) {
+        throw DatosInvalidos("Un bus debe tener al menos un puesto");
+    }
 	this->puestos = puestos;
 }
 
 void Bus::setPuestos (int puestos ) {
 	this->puestos = puestos;
+	if (puestos < 1) {
+        throw DatosInvalidos("Un bus debe tener al menos un puesto");
+    }
 }
 int Bus::getPuestos () {
 	return this->puestos;

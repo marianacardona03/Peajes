@@ -1,10 +1,6 @@
 #include <iostream>
 #include "Moto.h"
-
-Moto::Moto() : Vehiculo()
-{
-  this->cilindraje = 100;
-}
+#include "Excepciones.h"
 
 Moto::~Moto()
 {
@@ -14,10 +10,19 @@ Moto::~Moto()
 Moto::Moto(string placa, Propietario* propietario, int cilindraje)
     : Vehiculo(placa, propietario)
 {
+    if (cilindraje <= 0) {
+        throw DatosInvalidos("El cilindraje debe ser mayor que cero");
+    }
   this->cilindraje = cilindraje;
 }
 
-void Moto::setCilindraje(int cilindraje) { this->cilindraje = cilindraje; }
+void Moto::setCilindraje(int cilindraje) { 
+    if (cilindraje <= 0) {
+        throw DatosInvalidos("El cilindraje debe ser mayor que cero");
+    }
+    this->cilindraje = cilindraje;
+}
+
 int Moto::getCilindraje() const{ return this->cilindraje; }
 
 bool Moto::altoCilindraje() const{

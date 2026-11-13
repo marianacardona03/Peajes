@@ -24,7 +24,7 @@ string Propietario::describir() const {
         texto = "No";
 
     return "Propietario: " + getNombre() + " (ID: " + getId() + ")"
-           + " | Es un vecino: " + texto;
+           + "  Es un vecino: " + texto;
            
 }
 

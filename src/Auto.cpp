@@ -1,11 +1,6 @@
 #include <iostream>
 #include <Auto.h>
-
-
-Auto::Auto() : Vehiculo()
-{
-  this->pasajeros = 1;
-}
+#include "Excepciones.h"
 
 Auto::~Auto()
 {
@@ -15,10 +10,23 @@ Auto::~Auto()
 Auto::Auto(string placa, Propietario* propietario, int pasajeros)
     : Vehiculo(placa,propietario)
 {
-  this->pasajeros = pasajeros ;
+    if (pasajeros < 1) {
+        throw DatosInvalidos("El carro debe tener al menos un pasajero");
+    }
+    this->pasajeros = pasajeros ;
 }
 
-void Auto::setPasajeros (int pasajeros ) { this->pasajeros = pasajeros ; }
+void Auto::setPasajeros (int pasajeros ) { 
+    if (pasajeros < 1) {
+        throw DatosInvalidos("El carro debe tener al menos un pasajero");
+    }
+    this->pasajeros = pasajeros ; 
+}
+
+void Auto::agregarPasajero() {
+    pasajeros++;
+}
+
 int Auto::getPasajeros () { return this->pasajeros ; }
 
 int Auto::calcularPrecio () const

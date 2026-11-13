@@ -25,3 +25,4 @@ public:
     int getCantidadBuses();
     int getCantidadCamiones();
 };
+

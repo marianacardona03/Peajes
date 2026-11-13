@@ -8,11 +8,11 @@ private:
     int pasajeros;
 
 public:
-  Auto();
   ~Auto() override;
   Auto(string placa, Propietario* propietario, int pasajeros);
   void setPasajeros(int pasajeros);
   int getPasajeros();
+  void agregarPasajero();
   int calcularPrecio() const override; 
   string getTipo() const override;
   string getInfo() const override;

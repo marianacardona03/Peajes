@@ -8,7 +8,6 @@ private:
    int cilindraje;
 
 public:
-  Moto();
   ~Moto() override;
   Moto(string placa, Propietario* propietario, int cilindraje);
   void setCilindraje(int cilindraje);

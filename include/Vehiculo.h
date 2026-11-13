@@ -13,7 +13,6 @@ private:
 
 public:
 
-	Vehiculo();
 	virtual ~Vehiculo();
 	Vehiculo(string placa, Propietario* propietario);
 

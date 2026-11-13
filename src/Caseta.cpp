@@ -1,5 +1,6 @@
 #include "Caseta.h"
 #include <iostream>
+#include "Excepciones.h"
 using namespace std;
  
 
@@ -67,6 +68,9 @@ int Caseta::getCantidadCamiones() {
 }
 
 void Caseta::registrarPaso(Vehiculo* vehiculo) {
+    if (vehiculo == nullptr) {
+        throw DatosInvalidos("No se puede registrar un vehiculo nulo");
+    }
     string placa = vehiculo->getPlaca();
     string categoria = vehiculo->getTipo();
     int valor = vehiculo->calcularPrecio();

@@ -16,5 +16,6 @@ Persona::Persona(string id, string nombre)
 }
 void Persona::setId(string id) { this->id = id; }
 void Persona::setNombre(string nombre) { this->nombre = nombre; }
-string Persona::getId() { return this->id; }
-string Persona::getNombre() { return this->nombre; }
+string Persona::getId() const { return this->id; }
+string Persona::getNombre() const { return this->nombre; }
+
